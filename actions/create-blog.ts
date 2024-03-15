@@ -16,12 +16,12 @@ export const createBlog = async (v: z.infer<typeof BlogSchema>) => {
 
   const { data } = validateData;
 
-  const session = await auth();
-  if (!session || !session.user || !session.user.email) {
-    return { error: "Please Login Again!" };
-  }
+  // const session = await auth();
+  // if (!session || !session.user || !session.user.email) {
+  //   return { error: "Please Login Again!" };
+  // }
 
-  const userId = await getUserIdByEmail(session.user.email);
+  const userId = await getUserIdByEmail("hsexplain1@gmail.com");
 
   let img = " ";
   const block = JSON.parse(data.blog);

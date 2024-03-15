@@ -18,7 +18,7 @@ export const LoginUser = async (v: z.infer<typeof LoginSchema>) => {
       redirect: false,
     });
 
-    return {success:"Login Successful"}
+    return { success: "Login Successful" };
   } catch (error) {
     console.log(error);
     return { error: "something went wrong" };

@@ -35,7 +35,7 @@ const Home = async () => {
     }
   );
 
-  const data = await getBlogFromUrl("how-to-use-loan-emi-calcaluator");
+  const data = await getBlogFromUrl("new-car-loan-emi-calculator");
 
   if (!data) {
     return;

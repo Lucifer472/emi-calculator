@@ -32,7 +32,7 @@ export default async function Home() {
     }
   );
 
-  const data = await getBlogFromUrl("blog-post");
+  const data = await getBlogFromUrl("new-car-loan-emi-calculator");
 
   if (!data) {
     return;

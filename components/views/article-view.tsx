@@ -165,30 +165,32 @@ const ArticleView = ({
           }
         })
       }
-      <Accordion
-        type="single"
-        collapsible
-        className=" w-full mt-4 border-t border-gray-300"
-      >
-        <h2
-          style={{
-            fontSize: "1.5rem",
-            margin: ".6em 0",
-          }}
+      {faq && faq[0].question !== "" && (
+        <Accordion
+          type="single"
+          collapsible
+          className=" w-full mt-4 border-t border-gray-300"
         >
-          FAQ:
-        </h2>
-        {faq.map((f, index) => (
-          <AccordionItem value={`${index}`} key={index}>
-            <AccordionTrigger className="text-sm">
-              {f.question}
-            </AccordionTrigger>
-            <AccordionContent className="text-base">
-              {f.answer}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
+          <h2
+            style={{
+              fontSize: "1.5rem",
+              margin: ".6em 0",
+            }}
+          >
+            FAQ:
+          </h2>
+          {faq.map((f, index) => (
+            <AccordionItem value={`${index}`} key={index}>
+              <AccordionTrigger className="text-sm">
+                {f.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-base">
+                {f.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      )}
     </article>
   );
 };

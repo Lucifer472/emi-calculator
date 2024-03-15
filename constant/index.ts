@@ -172,11 +172,11 @@ export const footerLinks = [
   },
   {
     label: "Terms & Condition",
-    link: "/car",
+    link: "/terms",
   },
   {
     label: "Privacy Policy",
-    link: "/personal",
+    link: "/policy",
   },
 ];
 

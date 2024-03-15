@@ -70,3 +70,20 @@ export const getBlogsByCat = async (cat: string, page: number) => {
     return null;
   }
 };
+
+export const getAllBlogs = async () => {
+  try {
+    const data = await db.blog.findMany({
+      take: 1000,
+      select: {
+        url: true,
+        updatedAt: true,
+      },
+    });
+
+    if (!data) return null;
+    return data;
+  } catch (error) {
+    return null;
+  }
+};

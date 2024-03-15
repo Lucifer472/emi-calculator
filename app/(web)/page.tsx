@@ -1,11 +1,22 @@
 import dynamic from "next/dynamic";
 
 import ArticleView from "@/components/views/article-view";
-import { getBlogFromUrl } from "@/lib/blog";
 import PageTitle from "@/components/etc/title";
+
+import { getBlogFromUrl } from "@/lib/blog";
 import { principleStopPoints1 } from "@/constant";
 
-export default async function Home() {
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home Loan",
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const Home = async () => {
   const EmiCalculator = dynamic(
     () => import("@/components/views/emi-calculator"),
     {
@@ -46,4 +57,6 @@ export default async function Home() {
       )}
     </div>
   );
-}
+};
+
+export default Home;

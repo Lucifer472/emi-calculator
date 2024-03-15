@@ -3,6 +3,15 @@ import ArticleView from "@/components/views/article-view";
 import { getBlogFromUrl } from "@/lib/blog";
 import PageTitle from "@/components/etc/title";
 import { principleStopPoints3 } from "@/constant";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Personal Loan",
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default async function Home() {
   const EmiCalculator = dynamic(

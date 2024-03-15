@@ -3,6 +3,15 @@ import { getBlogsByCat } from "@/lib/blog";
 import NoArticleFound from "@/components/views/no-article";
 import ArticleListView from "@/components/views/article-list-view";
 import { Pagination } from "@/components/etc/pagination";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Car Loan - Categories",
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 const ArticlePage = async ({ searchParams }: { searchParams: any }) => {
   const searchPage = parseInt(searchParams.page);

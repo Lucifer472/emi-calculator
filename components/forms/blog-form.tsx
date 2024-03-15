@@ -27,6 +27,7 @@ import { BlogSchema } from "@/schema";
 import { Button } from "../ui/button";
 import { createBlog } from "@/actions/create-blog";
 import toast from "react-hot-toast";
+import { Category } from "@/constant";
 
 const BlogForm = () => {
   const [data, setData] = useState<any>(null);
@@ -136,11 +137,11 @@ const BlogForm = () => {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="Car Loan">Car Loan</SelectItem>
-                      <SelectItem value="Personal Loan">
-                        Personal Loan
-                      </SelectItem>
-                      <SelectItem value="Home Loan">Home Loan</SelectItem>
+                      {Category.map((c) => (
+                        <SelectItem key={c.value} value={c.value}>
+                          {c.label}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </FormControl>

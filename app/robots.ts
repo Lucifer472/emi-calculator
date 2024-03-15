@@ -6,7 +6,6 @@ const robots = (): MetadataRoute.Robots => {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/login", "/blogs", "/user"],
       },
     ],
     sitemap: `${process.env.NEXTAUTH_URL}/sitemap.xml`,

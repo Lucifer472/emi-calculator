@@ -1,8 +1,10 @@
 import { UserForm } from "@/components/forms/user-form";
 import AdminNavbar from "@/components/navigation/admin-navbar";
 import FormWrapper from "@/components/wrappers/form-wrapper";
+import { redirect } from "next/navigation";
 
 const UserPage = () => {
+  redirect("/");
   return (
     <section className="w-full min-h-screen">
       <AdminNavbar />

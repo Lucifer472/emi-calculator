@@ -22,19 +22,8 @@ const LoginForm = () => {
     },
   });
 
-  const router = useRouter();
-
   const onSubmit = (v: z.infer<typeof LoginSchema>) => {
-    LoginUser(v).then((r) => {
-      console.log(r);
-      if (r?.error) {
-        toast.error(r.error);
-      }
-      if (r?.success) {
-        toast.success(r.success);
-        router.push(redirect_path);
-      }
-    });
+    LoginUser(v);
   };
 
   return (

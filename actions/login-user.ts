@@ -1,9 +1,9 @@
 "use server";
+import * as z from "zod";
+
 import { signIn } from "@/auth";
 import { redirect_path } from "@/routes";
 import { LoginSchema } from "@/schema";
-import { AuthError } from "next-auth";
-import * as z from "zod";
 
 export const LoginUser = async (v: z.infer<typeof LoginSchema>) => {
   const validateData = LoginSchema.safeParse(v);
@@ -11,17 +11,10 @@ export const LoginUser = async (v: z.infer<typeof LoginSchema>) => {
   if (!validateData.success) {
     return { error: "Invalid Fields" };
   }
-  try {
-    await signIn("credentials", {
-      email: validateData.data.email,
-      password: validateData.data.password,
-      redirect: true,
-      redirectTo: redirect_path,
-    });
-
-    return { success: "Login Successful" };
-  } catch (error) {
-    console.log(error);
-    return { error: "something went wrong" };
-  }
+  await signIn("credentials", {
+    email: validateData.data.email,
+    password: validateData.data.password,
+    redirect: true,
+    redirectTo: redirect_path,
+  });
 };

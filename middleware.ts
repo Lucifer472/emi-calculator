@@ -4,7 +4,7 @@ import { loginPaths, redirect_path } from "@/routes";
 
 const { auth } = NextAuth(authConfig);
 
-export default auth((req) => {
+export default auth(async (req) => {
   const isLoggedIn = !!req.auth;
   const { nextUrl } = req;
 

@@ -1,34 +1,30 @@
 import type { NextAuthConfig } from "next-auth";
 import bcrypt from "bcryptjs";
 
-import CredentialsProvider from "next-auth/providers/credentials";
-import { getUsersByEmail } from "./lib/user";
-import { LoginSchema } from "./schema";
+import Credentials from "next-auth/providers/credentials";
+import { getUsersByEmail } from "@/lib/user";
+import { LoginSchema } from "@/schema";
 
 export default {
   providers: [
-    CredentialsProvider({
-      name: "Credentials",
+    Credentials({
       async authorize(credentials) {
         const validateFields = LoginSchema.safeParse(credentials);
 
         if (!validateFields.success) return null;
 
-        const user = await getUsersByEmail(validateFields.data.email);
-        if (user.success) {
-          const isMatch = await bcrypt.compare(
-            validateFields.data.password,
-            user.success.password
-          );
+        const { email, password } = validateFields.data;
 
-          if (!isMatch) {
-            return null;
-          }
+        const user = await getUsersByEmail(email);
+        if (user.error || !user.success) return null;
 
-          const data = { ...user.success, password: null };
-          return data;
-        }
-        return null;
+        const isPasswordMatch = await bcrypt.compare(
+          password,
+          user.success.password as string
+        );
+
+        if (!isPasswordMatch) return null;
+        return user.success;
       },
     }),
   ],

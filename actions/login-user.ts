@@ -15,7 +15,8 @@ export const LoginUser = async (v: z.infer<typeof LoginSchema>) => {
     await signIn("credentials", {
       email: validateData.data.email,
       password: validateData.data.password,
-      redirect: false,
+      redirect: true,
+      redirectTo: redirect_path,
     });
 
     return { success: "Login Successful" };

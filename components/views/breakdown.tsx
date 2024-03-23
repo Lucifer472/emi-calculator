@@ -50,7 +50,7 @@ const EmiBreakdown = () => {
   ];
 
   return (
-    <div className="p-2 flex flex-wrap items-center justify-center border rounded-md mt-8">
+    <div className="p-2 flex flex-wrap items-center justify-center border rounded-md ">
       <div className="w-[50%] py-4 flex flex-col items-center justify-center gap-y-2">
         <h2 className="text-xs text-muted-foreground text-center">Loan EMI</h2>
         <span className="text-lg font-medium">₹ {emi.toLocaleString()}</span>

@@ -31,7 +31,7 @@ const EmiCalculator = ({ maxPri, marks }: EmiCalculatorProps) => {
   ]);
 
   return (
-    <div className="flex items-center justify-start flex-col gap-y-6">
+    <div className="flex items-center justify-start flex-col gap-y-6 mb-4">
       <div className="flex flex-col items-center justify-start w-full gap-y-2">
         <TextInputField
           label="Loan Amount"

@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 };
 
 const Home = async () => {
+  
   const EmiCalculator = dynamic(
     () => import("@/components/views/emi-calculator"),
     {

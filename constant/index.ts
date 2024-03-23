@@ -194,3 +194,69 @@ export const Category = [
     label: "Home Loan",
   },
 ];
+
+export const loanSelectType = [
+  {
+    label: "Personal Loan",
+    link: "personal",
+    img: "/personal.png",
+  },
+  {
+    label: "Home Loan",
+    link: "home",
+    img: "/home.png",
+  },
+  {
+    label: "Car Loan",
+    link: "car",
+    img: "/car.webp",
+  },
+];
+
+export const loanSelectBank = [
+  {
+    label: "HDFC Bank",
+    link: "hdfc",
+    img: "/hdfc.png",
+  },
+  {
+    label: "SBI Bank",
+    link: "sbi",
+    img: "/sbi.png",
+  },
+  {
+    label: "Axis Bank",
+    link: "axis",
+    img: "/axis.png",
+  },
+  {
+    label: "Kotak Bank",
+    link: "kotak",
+    img: "/kotak.png",
+  },
+  {
+    label: "ICICI Bank",
+    link: "icici",
+    img: "/icici.png",
+  },
+  {
+    label: "IDFC Bank",
+    link: "idfc",
+    img: "/idfc.png",
+  },
+  {
+    label: "BOB Bank",
+    link: "bob",
+    img: "/bob.png",
+  },
+  {
+    label: "Capital First",
+    link: "capital",
+    img: "/capital.jpg",
+  },
+  {
+    label: "Aditya Birla",
+    link: "birla",
+    img: "/birla.png",
+  },
+];

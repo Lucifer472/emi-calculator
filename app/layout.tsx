@@ -6,10 +6,12 @@ import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://emi-calculator.ojasinfo.in"),
   title: {
     default: "EMI Calculator",
     template: "%s | EMI Calculator",
   },
+
   description:
     "EMI Calculator - Calculate Equated Monthly Installment (EMI) for Home Loan / Housing Loan, Car Loan & Personal Loan in India (with interactive charts)",
   twitter: {

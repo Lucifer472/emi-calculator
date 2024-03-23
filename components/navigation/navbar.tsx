@@ -26,7 +26,9 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <div></div>
+        <Button variant={"outline"} className="hidden sm:block" asChild>
+          <Link href={"/loan"}>Get Loan</Link>
+        </Button>
         <button
           onClick={() => setNav(!nav)}
           className="flex sm:hidden items-center justify-center cursor-pointer"
@@ -49,6 +51,13 @@ const Navbar = () => {
               </Button>
             </li>
           ))}
+          <li>
+            <Button variant={"link"} onClick={() => setNav(true)} asChild>
+              <Link className="text-white text-[1rem]" href={"/loan"}>
+                Get Loan
+              </Link>
+            </Button>
+          </li>
         </ul>
       )}
     </nav>

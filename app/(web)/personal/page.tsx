@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Home() {
+export default async function Personal() {
   const EmiCalculator = dynamic(
     () => import("@/components/views/emi-calculator"),
     {
